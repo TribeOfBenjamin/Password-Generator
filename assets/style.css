@@ -1,0 +1,25 @@
+.gray {
+    background-color: #d6d6d6;
+}
+
+.center {
+    text-align: center;
+    margin: auto;
+    margin-top: 40px;
+    width: 600px;
+}
+
+.title {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: larger;
+}
+
+.passwordField {
+    font-family: monospace;
+    background-color: #eeeeee;
+    border: 5px solid #d6d6d6;
+}
+
+.buttonShort {
+    width: 200px;
+}
