@@ -36,11 +36,16 @@
         var passwordLength = prompt("How long do you want your password to be? (Passwords must be at least 8 characters and no more than 128")
 
         if ((passwordLength >= 8) && (passwordLength <= 128)) {
-            prompt("You did it! Ben TEst")
+            var includeUppers = confirm("Do you want UPPERCASE LETTERS included in your password?")
+            var includeLowers = confirm("Do you want LOWERCASE LETTERS included in your password?")
+            var includeNumbers = confirm("Do you want NUMBERS included in your password?")
+            var includeSymbols = confirm("Do you want SYMBOLS included in your password?")
 
         }
+
+        
         else {
-            prompt("Come on, human. I said between 8 and 128 characters.")
+            prompt("Come on, human. I said between 8 and 128 characters. Try again.")
         }
 
     </script>
