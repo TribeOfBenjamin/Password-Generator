@@ -33,39 +33,76 @@
 
     <script>
 
-        var passwordLength = prompt("How long do you want your password to be? (Passwords must be at least 8 characters and no more than 128")
+        var passwordLength = prompt("How long do you want your password to be? (Passwords must be at least 8 characters and no more than 128");
         
         if ((passwordLength >= 8) && (passwordLength <= 128)) {
-            var uppersChoice = confirm("Do you want uppercase letters included in your password?")
-            var lowersChoice = confirm("Do you want lowercase letters included in your password?")
+            var uppersChoice = confirm("Do you want uppercase letters included in your password?");
+            var lowersChoice = confirm("Do you want lowercase letters included in your password?");
+            var numbersChoice = confirm("Do you want numbers included in your password?");
+            var specialsChoice = confirm("Do you want special characters included in your password?");
         }
 
         else {
-            alert("Come on, human. I said between 8 and 128 characters. No password for you!")
+            alert("Come on, human. I said between 8 and 128 characters. No password for you!");
         }
-
-        if (uppersChoice && (lowersChoice === false)) {
+        //USER CHOICE: Uppercase
+        if (uppersChoice && (lowersChoice === false) && (numbersChoice === false) && (specialsChoice === false)) {
             makeUppersPassword(passwordLength);
 
             console.log(makeUppersPassword(passwordLength));
         }
-
-        if (lowersChoice && (uppersChoice === false)) {
+        //USER CHOICE: Lowercase
+        if (lowersChoice && (uppersChoice === false) && (numbersChoice === false) && (specialsChoice === false)) {
             makeLowersPassword(passwordLength);
 
             console.log(makeLowersPassword(passwordLength));
         }
+        //USER CHOICE: Numbers
+        if (numbersChoice && (uppersChoice === false) && (lowersChoice === false) && (specialsChoice === false)) {
+            makeNumbersPassword(passwordLength);
 
-        if (uppersChoice && lowersChoice) {
-            makeLowersUppersPassword(passwordLength);
-            
-            console.log(makeLowersUppersPassword(passwordLength));
+            console.log(makeNumbersPassword(passwordLength));
         }
+        //USER CHOICE: Specials
+        if (specialsChoice && (uppersChoice === false) && (lowersChoice === false) && (numbersChoice === false)) {
+            makeSpecialsPassword(passwordLength);
+
+            console.log(makeSpecialsPassword(passwordLength));
+        }
+        //USER CHOICE: Uppercase, Lowercase
+        if ((uppersChoice && lowersChoice) && (numbersChoice === false) && (specialsChoice === false)) {
+            makeUppersLowersPassword(passwordLength);
+            
+            console.log(makeUppersLowersPassword(passwordLength));
+        }
+        //USER CHOICE: Uppercase, Numbers
+        if ((uppersChoice && numbersChoice) && (lowersChoice === false) && (specialsChoice === false)) {
+            makeUppersNumbersPassword(passwordLength);
+            
+            console.log(makeUppersNumbersPassword(passwordLength));
+        }
+        //USER CHOICE: Uppercase, Specials
+
+        //USER CHOICE: Lowercase, Numbers
+
+        //USER CHOICE: Lowercase, Specials
+
+        //USER CHOICE: Numbers, Specials
+
+        //USER CHOICE: Uppercase, Lowercase, Numbers
+
+        //USER CHOICE: Uppercase, Lowercase, Specials
+
+        //USER CHOICE: Uppercase, Numbers, Specials
+
+        //USER CHOICE: Lowercase, Numbers, Specials
+
+        //USER CHOICE: Uppercase, Lowercase, Numbers, Specials
 
 
 
 // Figured out how to used result and an empty variable (var result = "";) from StackOverflow: https://stackoverflow.com/questions/28665160/simple-js-for-loop-returning-undefined
-        //All Uppers
+        //GENERATES PASSWORD WITH: Uppercase
         function makeUppersPassword(length) {
    
             var result           = "";
@@ -77,10 +114,7 @@
                 }
                 return result;
             }
-        //Checking if it worked
-        //console.log(makeUppersPassword(passwordLength));
-
-        //All Lowers
+        //GENERATES PASSWORD WITH: Lowercase
         function makeLowersPassword(length) {
    
             var result           = "";
@@ -92,14 +126,35 @@
                 }
                 return result;
             }
-        //Checking if it worked
-        //console.log(makeLowersPassword(passwordLength));
+        //GENERATES PASSWORD WITH: Numbers
+        function makeNumbersPassword(length) {
+            
+            var result           = "";
+            var password       = "0123456789";
+            var passwordLength = password.length;
 
-        //Lowers and Uppers Only
-        function makeLowersUppersPassword(length) {
+            for ( var i = 0; i < length; i++ ) {
+                result += password.charAt(Math.floor(Math.random() * passwordLength));
+                }
+                return result;
+        }
+        //GENERATES PASSWORD WITH: Specials
+        function makeSpecialsPassword(length) {
+            
+            var result           = "";
+            var password       = "!@#$%^&*()";
+            var passwordLength = password.length;
+
+            for ( var i = 0; i < length; i++ ) {
+                result += password.charAt(Math.floor(Math.random() * passwordLength));
+                }
+                return result;
+        }
+        //GENERATES PASSWORD WITH: Uppercase, Lowercase
+        function makeUppersLowersPassword(length) {
    
             var result           = "";
-            var password       = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            var password       = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
             var passwordLength = password.length;
 
             for ( var i = 0; i < length; i++ ) {
@@ -107,9 +162,19 @@
                 }
                 return result;
             }
-        //Checking if it worked
-        //console.log(makeLowersUppersPassword(passwordLength));
+        //GENERATES PASSWORD WITH: Uppercase, Numbers
+        function makeUppersNumbersPassword(length) {
+   
+            var result           = "";
+            var password       = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            var passwordLength = password.length;
 
+            for ( var i = 0; i < length; i++ ) {
+                result += password.charAt(Math.floor(Math.random() * passwordLength));
+                }
+                return result;
+            }
+            
 
 
 
