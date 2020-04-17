@@ -34,19 +34,85 @@
     <script>
 
         var passwordLength = prompt("How long do you want your password to be? (Passwords must be at least 8 characters and no more than 128")
-
-        if ((passwordLength >= 8) && (passwordLength <= 128)) {
-            var includeUppers = confirm("Do you want UPPERCASE LETTERS included in your password?")
-            var includeLowers = confirm("Do you want LOWERCASE LETTERS included in your password?")
-            var includeNumbers = confirm("Do you want NUMBERS included in your password?")
-            var includeSymbols = confirm("Do you want SYMBOLS included in your password?")
-
-        }
-
         
-        else {
-            prompt("Come on, human. I said between 8 and 128 characters. Try again.")
+        if ((passwordLength >= 8) && (passwordLength <= 128)) {
+            var uppersChoice = confirm("Do you want uppercase letters included in your password?")
+            var lowersChoice = confirm("Do you want lowercase letters included in your password?")
         }
+
+        else {
+            alert("Come on, human. I said between 8 and 128 characters. No password for you!")
+        }
+
+        if (uppersChoice && (lowersChoice === false)) {
+            makeUppersPassword(passwordLength);
+
+            console.log(makeUppersPassword(passwordLength));
+        }
+
+        if (lowersChoice && (uppersChoice === false)) {
+            makeLowersPassword(passwordLength);
+
+            console.log(makeLowersPassword(passwordLength));
+        }
+
+        if (uppersChoice && lowersChoice) {
+            makeLowersUppersPassword(passwordLength);
+            
+            console.log(makeLowersUppersPassword(passwordLength));
+        }
+
+
+
+// Figured out how to used result and an empty variable (var result = "";) from StackOverflow: https://stackoverflow.com/questions/28665160/simple-js-for-loop-returning-undefined
+        //All Uppers
+        function makeUppersPassword(length) {
+   
+            var result           = "";
+            var password       = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            var passwordLength = password.length;
+
+            for ( var i = 0; i < length; i++ ) {
+                result += password.charAt(Math.floor(Math.random() * passwordLength));
+                }
+                return result;
+            }
+        //Checking if it worked
+        //console.log(makeUppersPassword(passwordLength));
+
+        //All Lowers
+        function makeLowersPassword(length) {
+   
+            var result           = "";
+            var password       = "abcdefghijklmnopqrstuvwxyz";
+            var passwordLength = password.length;
+
+            for ( var i = 0; i < length; i++ ) {
+                result += password.charAt(Math.floor(Math.random() * passwordLength));
+                }
+                return result;
+            }
+        //Checking if it worked
+        //console.log(makeLowersPassword(passwordLength));
+
+        //Lowers and Uppers Only
+        function makeLowersUppersPassword(length) {
+   
+            var result           = "";
+            var password       = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            var passwordLength = password.length;
+
+            for ( var i = 0; i < length; i++ ) {
+                result += password.charAt(Math.floor(Math.random() * passwordLength));
+                }
+                return result;
+            }
+        //Checking if it worked
+        //console.log(makeLowersUppersPassword(passwordLength));
+
+
+
+
 
     </script>
 </body>
