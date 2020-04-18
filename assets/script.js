@@ -1,4 +1,6 @@
-        var passwordLength = prompt("How long do you want your password to be? (Passwords must be at least 8 characters and no more than 128");
+function startPasswordCriteria() {
+
+    var passwordLength = prompt("How long do you want your password to be? (Passwords must be at least 8 characters and no more than 128");
         
         if ((passwordLength >= 8) && (passwordLength <= 128)) {
             var uppersChoice = confirm("Do you want uppercase letters included in your password?");
@@ -86,7 +88,7 @@
         } else if ((uppersChoice === false) && (uppersChoice === false) && (uppersChoice === false)) {
             alert("You need to select at least one category. Please refresh the page and try again.");
         }
-
+    }
 
 // Figured out how to used result and an empty variable (var result = "";) from StackOverflow: https://stackoverflow.com/questions/28665160/simple-js-for-loop-returning-undefined
         //GENERATES PASSWORD WITH: Uppercase
