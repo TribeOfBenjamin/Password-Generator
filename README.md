@@ -4,4 +4,5 @@ I created a password generator that creates a random password for the user. The 
 * lowercase letters
 * numbers
 * special symbols
-
+## Deployed Site
+[Here is the link](https://tribeofbenjamin.github.io/Password-Generator/) to the site. 
