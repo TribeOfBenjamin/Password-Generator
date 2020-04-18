@@ -130,7 +130,11 @@
             console.log(makeLowersNumbersSpecialsPassword(passwordLength));
         }
         //USER CHOICE: Uppercase, Lowercase, Numbers, Specials
-
+        if (uppersChoice && lowersChoice && numbersChoice && specialsChoice) {
+            makeUppersLowersNumbersSpecialsPassword(passwordLength);
+            
+            console.log(makeUppersLowersNumbersSpecialsPassword(passwordLength));
+        }
 
 
 // Figured out how to used result and an empty variable (var result = "";) from StackOverflow: https://stackoverflow.com/questions/28665160/simple-js-for-loop-returning-undefined
@@ -302,7 +306,18 @@
                 }
                 return result;
             }  
+        //GENERATES PASSWORD WITH: Uppercase, Lowercase, Numbers, Specials
+        function makeUppersLowersNumbersSpecialsPassword(length) {
+   
+            var result         = "";
+            var password       = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz012456789!@#$%^&*()";
+            var passwordLength = password.length;
 
+            for ( var i = 0; i < length; i++ ) {
+                result += password.charAt(Math.floor(Math.random() * passwordLength));
+                }
+                return result;
+            }  
 
 
     </script>
