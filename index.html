@@ -40,11 +40,10 @@
             var lowersChoice = confirm("Do you want lowercase letters included in your password?");
             var numbersChoice = confirm("Do you want numbers included in your password?");
             var specialsChoice = confirm("Do you want special characters included in your password?");
-        }
-
-        else {
+        } else {
             alert("Come on, human. I said between 8 and 128 characters. No password for you!");
         }
+
         //USER CHOICE: Uppercase
         if (uppersChoice && (lowersChoice === false) && (numbersChoice === false) && (specialsChoice === false)) {
             makeUppersPassword(passwordLength);
@@ -52,88 +51,90 @@
             console.log(makeUppersPassword(passwordLength));
         }
         //USER CHOICE: Lowercase
-        if (lowersChoice && (uppersChoice === false) && (numbersChoice === false) && (specialsChoice === false)) {
+        else if (lowersChoice && (uppersChoice === false) && (numbersChoice === false) && (specialsChoice === false)) {
             makeLowersPassword(passwordLength);
 
             console.log(makeLowersPassword(passwordLength));
         }
         //USER CHOICE: Numbers
-        if (numbersChoice && (uppersChoice === false) && (lowersChoice === false) && (specialsChoice === false)) {
+        else if (numbersChoice && (uppersChoice === false) && (lowersChoice === false) && (specialsChoice === false)) {
             makeNumbersPassword(passwordLength);
 
             console.log(makeNumbersPassword(passwordLength));
         }
         //USER CHOICE: Specials
-        if (specialsChoice && (uppersChoice === false) && (lowersChoice === false) && (numbersChoice === false)) {
+        else if (specialsChoice && (uppersChoice === false) && (lowersChoice === false) && (numbersChoice === false)) {
             makeSpecialsPassword(passwordLength);
 
             console.log(makeSpecialsPassword(passwordLength));
         }
         //USER CHOICE: Uppercase, Lowercase
-        if ((uppersChoice && lowersChoice) && (numbersChoice === false) && (specialsChoice === false)) {
+        else if ((uppersChoice && lowersChoice) && (numbersChoice === false) && (specialsChoice === false)) {
             makeUppersLowersPassword(passwordLength);
             
             console.log(makeUppersLowersPassword(passwordLength));
         }
         //USER CHOICE: Uppercase, Numbers
-        if ((uppersChoice && numbersChoice) && (lowersChoice === false) && (specialsChoice === false)) {
+        else if ((uppersChoice && numbersChoice) && (lowersChoice === false) && (specialsChoice === false)) {
             makeUppersNumbersPassword(passwordLength);
             
             console.log(makeUppersNumbersPassword(passwordLength));
         }
         //USER CHOICE: Uppercase, Specials
-        if ((uppersChoice && specialsChoice) && (lowersChoice === false) && (numbersChoice === false)) {
+        else if ((uppersChoice && specialsChoice) && (lowersChoice === false) && (numbersChoice === false)) {
             makeUppersSpecialsPassword(passwordLength);
             
             console.log(makeUppersSpecialsPassword(passwordLength));
         }
         //USER CHOICE: Lowercase, Numbers
-        if ((lowersChoice && numbersChoice) && (uppersChoice === false) && (specialsChoice === false)) {
+        else if ((lowersChoice && numbersChoice) && (uppersChoice === false) && (specialsChoice === false)) {
             makeLowersNumbersPassword(passwordLength);
             
             console.log(makeLowersNumbersPassword(passwordLength));
         }
         //USER CHOICE: Lowercase, Specials
-        if ((lowersChoice && specialsChoice) && (uppersChoice === false) && (numbersChoice === false)) {
+        else if ((lowersChoice && specialsChoice) && (uppersChoice === false) && (numbersChoice === false)) {
             makeLowersSpecialsPassword(passwordLength);
             
             console.log(makeLowersSpecialsPassword(passwordLength));
         }
         //USER CHOICE: Numbers, Specials
-        if ((numbersChoice && specialsChoice) && (uppersChoice === false) && (lowersChoice === false)) {
+        else if ((numbersChoice && specialsChoice) && (uppersChoice === false) && (lowersChoice === false)) {
             makeNumbersSpecialsPassword(passwordLength);
             
             console.log(makeNumbersSpecialsPassword(passwordLength));
         }
         //USER CHOICE: Uppercase, Lowercase, Numbers
-        if ((uppersChoice && lowersChoice && numbersChoice) && (specialsChoice === false)) {
+        else if ((uppersChoice && lowersChoice && numbersChoice) && (specialsChoice === false)) {
             makeUppersLowersNumbersPassword(passwordLength);
             
             console.log(makeUppersLowersNumbersPassword(passwordLength));
         }
         //USER CHOICE: Uppercase, Lowercase, Specials
-        if ((uppersChoice && lowersChoice && specialsChoice) && (numbersChoice === false)) {
+        else if ((uppersChoice && lowersChoice && specialsChoice) && (numbersChoice === false)) {
             makeUppersLowersSpecialsPassword(passwordLength);
             
             console.log(makeUppersLowersSpecialsPassword(passwordLength));
         }
         //USER CHOICE: Uppercase, Numbers, Specials
-        if ((uppersChoice && numbersChoice && specialsChoice) && (lowersChoice === false)) {
+        else if ((uppersChoice && numbersChoice && specialsChoice) && (lowersChoice === false)) {
             makeUppersNumbersSpecialsPassword(passwordLength);
             
             console.log(makeUppersNumbersSpecialsPassword(passwordLength));
         }
         //USER CHOICE: Lowercase, Numbers, Specials
-        if ((lowersChoice && numbersChoice && specialsChoice) && (uppersChoice === false)) {
+        else if ((lowersChoice && numbersChoice && specialsChoice) && (uppersChoice === false)) {
             makeLowersNumbersSpecialsPassword(passwordLength);
             
             console.log(makeLowersNumbersSpecialsPassword(passwordLength));
         }
         //USER CHOICE: Uppercase, Lowercase, Numbers, Specials
-        if (uppersChoice && lowersChoice && numbersChoice && specialsChoice) {
+        else if (uppersChoice && lowersChoice && numbersChoice && specialsChoice) {
             makeUppersLowersNumbersSpecialsPassword(passwordLength);
             
             console.log(makeUppersLowersNumbersSpecialsPassword(passwordLength));
+        } else if ((uppersChoice === false) && (uppersChoice === false) && (uppersChoice === false)) {
+            alert("You need to select at least one category. Please refresh the page and try again.");
         }
 
 
