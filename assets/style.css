@@ -18,6 +18,7 @@
     font-family: monospace;
     background-color: #eeeeee;
     border: 5px solid #d6d6d6;
+    word-wrap: break-word;
 }
 
 .buttonShort {
