@@ -1,3 +1,5 @@
+
+
 function startPasswordCriteria() {
 
     var passwordLength = prompt("How long do you want your password to be? (Passwords must be at least 8 characters and no more than 128");
@@ -271,6 +273,5 @@ function startPasswordCriteria() {
                 }
                 return result;
             }  
-
-
     
+            document.querySelector(".btn").addEventListener("click", startPasswordCriteria);
