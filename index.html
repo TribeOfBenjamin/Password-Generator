@@ -118,9 +118,17 @@
             console.log(makeUppersLowersSpecialsPassword(passwordLength));
         }
         //USER CHOICE: Uppercase, Numbers, Specials
-
+        if ((uppersChoice && numbersChoice && specialsChoice) && (lowersChoice === false)) {
+            makeUppersNumbersSpecialsPassword(passwordLength);
+            
+            console.log(makeUppersNumbersSpecialsPassword(passwordLength));
+        }
         //USER CHOICE: Lowercase, Numbers, Specials
-
+        if ((lowersChoice && numbersChoice && specialsChoice) && (uppersChoice === false)) {
+            makeLowersNumbersSpecialsPassword(passwordLength);
+            
+            console.log(makeLowersNumbersSpecialsPassword(passwordLength));
+        }
         //USER CHOICE: Uppercase, Lowercase, Numbers, Specials
 
 
@@ -246,7 +254,7 @@
                 }
                 return result;
             }  
-        //GENERATES PASSWORD WITH: Uppers, Lowers, Numbers
+        //GENERATES PASSWORD WITH: Uppercase, Lowercase, Numbers
         function makeUppersLowersNumbersPassword(length) {
    
             var result         = "";
@@ -258,7 +266,7 @@
                 }
                 return result;
             }  
-        //GENERATES PASSWORD WITH: Uppers, Lowers, Specials
+        //GENERATES PASSWORD WITH: Uppercase, Lowercase, Specials
         function makeUppersLowersSpecialsPassword(length) {
    
             var result         = "";
@@ -270,6 +278,31 @@
                 }
                 return result;
             }  
+        //GENERATES PASSWORD WITH: Uppercase, Numbers, Specials
+        function makeUppersNumbersSpecialsPassword(length) {
+   
+            var result         = "";
+            var password       = "ABCDEFGHIJKLMNOPQRSTUVWXYZ012456789!@#$%^&*()";
+            var passwordLength = password.length;
+
+            for ( var i = 0; i < length; i++ ) {
+                result += password.charAt(Math.floor(Math.random() * passwordLength));
+                }
+                return result;
+            }  
+        //GENERATES PASSWORD WITH: Lowercase, Numbers, Specials
+        function makeLowersNumbersSpecialsPassword(length) {
+   
+            var result         = "";
+            var password       = "abcdefghijklmnopqrstuvwxyz012456789!@#$%^&*()";
+            var passwordLength = password.length;
+
+            for ( var i = 0; i < length; i++ ) {
+                result += password.charAt(Math.floor(Math.random() * passwordLength));
+                }
+                return result;
+            }  
+
 
 
     </script>
